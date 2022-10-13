@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>LA SAGRADA FAMILIA</title>
+</head>
+<body>
+<div class="ancho">
+
+  <header>
+     <!--contiene el logo de la sagrada familia-->
+     <img src="imagenes/logo_cabecera.png" alt="La-Sagrada-Familia">
+  </header>
+   
+   <div class="seccion-conocernos">
+     <h1>D&eacutejanos conocerte</h1>
+     <hr>
+   </div>
+    <br>
+   <div class="panel-principal">
+       <div class="contenedor-panel-principal">
+           <h1>¡ Compartenos tu informaci&oacuten !</h1>
+           <br><br>
+           <p>D&eacutejanos tus datos personales y nos comunicaremos contigo lo m&aacutes pronto posible</p>
+           <h5>Las casillas marcadas con * son de car&aacutecter obligatorio</h5>
+           <br><br>
+           <div class="contenedor-form">
+             <form action="" id="mi_formulario" action="/">
+               <div class="contenedor-form-1">
+                  <input type="text" placeholder="Nombre Completo *" id="txt-nombreCompleto">
+                  <input type="text" placeholder="Correo Electrónico *" id="txt-correoElectronico">
+                  <input type="text" placeholder="Celular *" id="txt-telefonoCelular">
+                  <input type="text" placeholder="Ciudad">
+                  <input type="text" placeholder="Localidad">
+              </div>
+              <div class="contenedor-form-2">
+                  <input type="text" name="" id="" placeholder="Estado">
+                  <input type="text" name="" id="" placeholder="Colonia">
+                  <select name="" id="">
+                    <option value="">------------------Elige tu &aacuterea de interes-----------------------</option>
+                    <option value="">Cajas</option>
+                    <option value="">Servicios</option>
+                    <option value="">Asesoramiento Financiero</option>
+                    <option value="">Gestor&iacutea y cobranza</option>
+                    <option value="">Cr&eacutedito</option>
+                    <option value="">Jur&iacutedico</option>
+                    <option value="">Archivo</option>
+                    <option value="">Mercadotecnia</option>
+                    <option value="">Diligencias</option>
+                    <option value="">Compras</option>
+                    <option value="">Intendencia</option>
+                    <option value="">Auditor&iacutea</option>
+                    <option value="">Capital Humano</option>
+                    <option value="">Mantenimiento</option>
+                    <option value="">Sistemas</option>
+                    <option value="">Contabilidad</option>
+                    <option value="">Administraci&oacuten</option>
+                  </select>
+                   <h4>Sube tu curriculum en formato PDF <span>(no exceder de 5 MB)</span><img src="imagenes/icono_pdf.png" alt="PDF"></h4>
+                   <input type="file" name="" id="">
+                   <input type="button" value="Enviar" onclick="validarFormulario()">
+              </div>
+             </form>
+           </div>
+       </div>
+   </div>
+  <!---Contenedor del footer--> 
+  <footer>
+   <h1>Jesus Fabrizzio Ciau Cordova</h1>
+   <h2>7SB</h2>
+   <h2>Programaci&oacuten Web</h2>
+  </footer>
+
+
+</div>
+
+
+
+
+
+<script>
+let formulario = document.getElementById("mi_formulario");
+let cajaNombre = document.getElementById("txt-nombreCompleto");
+let cajaCorreo = document.getElementById("txt-correoElectronico");
+let cajaCelular = document.getElementById("txt-telefonoCelular");
+
+function validarFormulario(){
+   if(cajaNombre.value == ""){
+    alert("Caja nombre no puede estar vacío");
+    cajaNombre.focus();
+    return false;
+   }
+
+   if(cajaCorreo.value == ""){
+     alert("Caja correo no puede estar vacío");
+     cajaCorreo.focus();
+     return false;
+   }else if(validateEmail(cajaCorreo)){
+     return true;
+   }
+   
+   if(cajaCelular.value == ""){
+     alert("Caja celular no puede estar vacío");
+     cajaCelular.focus();return false;
+   }
+
+   //formulario.document.submit();
+
+
+}
+
+function validateEmail(input){
+   const emailExpression = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+   
+   if(input.value.match(emailExpression)){
+   
+      alert("el correo es valido");
+	  return true;
+   }else {
+      alert("el correo no es valido");
+	  return false;
+   }
+
+}
+
+</script>
+
+
+
+
+</body>
+</html>
